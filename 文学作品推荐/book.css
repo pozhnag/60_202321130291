@@ -1,0 +1,193 @@
+/* 基础样式定义 */
+:root {
+  --primary-color: #3a5a78;
+  --secondary-color: #5c708a;
+  --bg-color: #f9fafc;
+  --text-color: #2d3748;
+  --light-text: #718096;
+  --border-color: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 头部样式 */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* 导航栏样式 */
+.nav-container {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+  gap: 2rem;
+}
+
+.nav-list li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-list li a:hover {
+  color: #2c425a;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
+/* 表格布局样式 */
+.recommendation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.book-item {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.book-item:last-child {
+  border-bottom: none;
+}
+
+.image-column {
+  width: 30%;
+  padding: 2rem;
+  text-align: center;
+  vertical-align: top;
+  background-color: #f8fafc;
+}
+
+.content-column {
+  width: 70%;
+  padding: 2rem;
+  vertical-align: top;
+}
+
+/* 图片与书名样式 */
+.book-image {
+  margin-bottom: 1rem;
+}
+
+.book-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: 1rem;
+}
+
+/* 内容区样式 */
+.content-column h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.content-column p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-list li {
+    flex: 1 1 45%;
+    text-align: center;
+  }
+
+  .recommendation-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .image-column, .content-column {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .image-column {
+    background-color: white;
+  }
+}
+
+/* 页脚样式 */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--light-text);
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
